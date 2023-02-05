@@ -68,11 +68,11 @@ INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/03
     
 SELECT * FROM card_games;
 
-/* Looking at average, max and min scores*/
+/*Looking at average, max and min scores*/
 
 SELECT AVG(score), MAX(score), MIN(score) FROM card_games;
 
-/* Average date played by player name with scores > 400 */
+/*Average date played by player name with scores > 400 */
 
 SELECT AVG(date_played) AS avg_date_played, 
 
@@ -82,16 +82,17 @@ GROUP BY player_name
 
 HAVING score > 400;
 
-/* Displaying and grouping by player names with total scores >1000 */
+/*Displaying and grouping by player names with total scores >1000 */
 
 SELECT player_name, SUM(score) as total_score FROM card_games GROUP BY player_name 
 HAVING total_score > 1000;
 
-/* Displaying the number of times the scores were >=100 and <=300*/
+/*Displaying the number of times the scores were >=100 and <=300*/
 
 SELECT score, COUNT (*) FROM card_games WHERE score >=100 AND score <=300; 
 
-/* Creating a gamer_experience level based on score and grouped by player name*/
+/*Creating a gamer_experience level based on score and grouped by player name*/
+
 SELECT player_name, score,
 CASE 
 WHEN score <=200 THEN "beginner"
@@ -105,7 +106,7 @@ GROUP BY player_name;
 
 SELECT player_name, score FROM card_games WHERE score > 200 AND date_played > "2015/03/04";
 
-/* Displaying player names, game names, and scores based on score grouping by games*/
+/*Displaying player names, game names, and scores based on score grouping by games*/
 
 SELECT player_name, score, game_name FROM card_games WHERE score <100 OR score >300 
 GROUP BY game_name; 

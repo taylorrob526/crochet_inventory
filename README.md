@@ -1,2 +1,2 @@
-# crochet_inventory
-A collection of SQL files for my crochet inventory
+# sql_projects
+A collection of SQL files for my various projects

@@ -1,7 +1,11 @@
 # sql_projects
 A collection of SQL files for various projects
 
-The first project involves card games... uses <script src="https://gist.github.com/pamelafox/1ddbcb55f9ba1f6ec435.js"></script>
+/*  Friendly Card Game Results:
+During this past winter, a few friends got together every Wednesday night for a friendly game of cards.  On some nights they'd play two games, but never the same game twice on the same night.  The usual players were Spunky Sam, Marcimus, Winston, and Hopper.  Sometimes, one of the friends couldn't make it, so there were only three players.  But sometimes they'd call another friend to fill-in.  In every game they played, the one with the hightest score was declared the winner.  These are their results:
+Created by: https://www.khanacademy.org/profile/brianduckworth
+*/
+
 
 ```
 CREATE TABLE card_games(id INTEGER PRIMARY KEY AUTOINCREMENT,

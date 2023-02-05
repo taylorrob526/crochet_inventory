@@ -1,13 +1,16 @@
 # sql_projects
-A collection of SQL files for my various projects
+A collection of SQL files for various projects
 
+The first project involves card games...
 
+```
 CREATE TABLE card_games(id INTEGER PRIMARY KEY AUTOINCREMENT,
     date_played TEXT,
     game_name TEXT,
     player_name TEXT,
     score INTEGER);
-    
+   ```
+ ```  
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/01/07','Rummy','Spunky Sam',226);
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/01/07','Rummy','Marcimus',418);
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/01/07','Rummy','Winston',523);
@@ -65,15 +68,20 @@ INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/03
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/03/25','Rummy','Marcimus',505);
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/03/25','Rummy','Winston',397);
 INSERT INTO card_games(date_played,game_name,player_name,score) VALUES ('2015/03/25','Rummy','Hopper',443);
-    
-SELECT * FROM card_games;
+```
 
+```
+SELECT * FROM card_games;
+```
 /*Looking at average, max and min scores*/
 
+```
 SELECT AVG(score), MAX(score), MIN(score) FROM card_games;
+```
 
 /*Average date played by player name with scores > 400 */
 
+```
 SELECT AVG(date_played) AS avg_date_played, 
 
 FROM card_games
@@ -81,18 +89,25 @@ FROM card_games
 GROUP BY player_name
 
 HAVING score > 400;
+```
 
 /*Displaying and grouping by player names with total scores >1000 */
 
+```
 SELECT player_name, SUM(score) as total_score FROM card_games GROUP BY player_name 
 HAVING total_score > 1000;
 
+```
+
 /*Displaying the number of times the scores were >=100 and <=300*/
+```
 
 SELECT score, COUNT (*) FROM card_games WHERE score >=100 AND score <=300; 
 
+```
 /*Creating a gamer_experience level based on score and grouped by player name*/
 
+```
 SELECT player_name, score,
 CASE 
 WHEN score <=200 THEN "beginner"
@@ -102,15 +117,20 @@ END AS "gamer_experience_level"
 FROM card_games
 GROUP BY player_name;
 
+```
 /*Displaying player names and scores where based score and dates played*/
 
+```
 SELECT player_name, score FROM card_games WHERE score > 200 AND date_played > "2015/03/04";
 
+```
 /*Displaying player names, game names, and scores based on score grouping by games*/
 
+```
 SELECT player_name, score, game_name FROM card_games WHERE score <100 OR score >300 
 GROUP BY game_name; 
 
+```
 
 
 

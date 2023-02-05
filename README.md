@@ -1,7 +1,7 @@
 # sql_projects
 A collection of SQL files for various projects
 
-The first project involves card games...
+The first project involves card games... uses <script src="https://gist.github.com/pamelafox/1ddbcb55f9ba1f6ec435.js"></script>
 
 ```
 CREATE TABLE card_games(id INTEGER PRIMARY KEY AUTOINCREMENT,
